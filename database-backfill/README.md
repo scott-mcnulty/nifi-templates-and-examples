@@ -1,6 +1,6 @@
 # Database Backfill
 
-This is a template that can be set up to pull large amounts of data from database tables that contain time-stamped data. I made it because I needed to pull months (6+) of historical data into HDFS.
+This is a template that can be set up to pull large amounts of data from database tables that contain time-stamped data. I made it because I needed to pull months (6+) of historical data into HDFS so some data scientists could use it for their model training.
 
 The template contains some instructions for setting up in addition to what is here.
 
