@@ -1,0 +1,26 @@
+[{
+        "operation": "shift",
+        "spec": {
+            "*": "&",
+            "tags": {
+                "*": "&1_&"
+            },
+            "friends": {
+                "*": {
+                    "*": "&2_&1_&",
+                    "friends_of_friend": {
+                        "*": {
+                            "*": "&2_&3_&_&1"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation": "remove",
+        "spec": {
+            "OMITTED": ""
+        }
+    }
+]

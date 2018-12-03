@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description>Example to show flow files spread across a NiFi cluster in a load balanced fashion. Requires NiFi to be configured as a cluster.</description>
+    <groupId>fbed3ddb-0164-1000-90e9-baded90e67fc</groupId>
+    <name>load-balancing-demo</name>
+    <snippet>
+        <connections>
+            <id>93030eab-f721-3847-0000-000000000000</id>
+            <parentGroupId>8dde4ace-1bfe-328c-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>3612e15d-d47a-3ed8-0000-000000000000</groupId>
+                <id>db197ded-96f5-39ad-0000-000000000000</id>
+                <type>INPUT_PORT</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <name></name>
+            <source>
+                <groupId>8dde4ace-1bfe-328c-0000-000000000000</groupId>
+                <id>775a3330-b19a-3315-0000-000000000000</id>
+                <type>INPUT_PORT</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <inputPorts>
+            <id>775a3330-b19a-3315-0000-000000000000</id>
+            <parentGroupId>8dde4ace-1bfe-328c-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>50.048603772880824</y>
+            </position>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <name>load_balancing_example_in</name>
+            <state>DISABLED</state>
+            <transmitting>false</transmitting>
+            <type>INPUT_PORT</type>
+        </inputPorts>
+        <processGroups>
+            <id>3612e15d-d47a-3ed8-0000-000000000000</id>
+            <parentGroupId>8dde4ace-1bfe-328c-0000-000000000000</parentGroupId>
+            <position>
+                <x>437.5679433543054</x>
+                <y>0.0</y>
+            </position>
+            <comments></comments>
+            <contents>
+                <connections>
+                    <id>25b50a91-281c-392d-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>3612e15d-d47a-3ed8-0000-000000000000</groupId>
+                        <id>99ff0773-94b6-3ada-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <source>
+                        <groupId>3612e15d-d47a-3ed8-0000-000000000000</groupId>
+                        <id>db197ded-96f5-39ad-0000-000000000000</id>
+                        <type>INPUT_PORT</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>4758ed82-acbe-3900-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>f63cabce-c548-30f2-0000-000000000000</groupId>
+                        <id>25309ec7-5ef5-3448-9d84-09339494244f</id>
+                        <type>REMOTE_INPUT_PORT</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>3612e15d-d47a-3ed8-0000-000000000000</groupId>
+                        <id>f0595092-4592-37e0-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <inputPorts>
+                    <id>db197ded-96f5-39ad-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>552.4221245978088</x>
+                        <y>479.1586589165545</y>
+                    </position>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <name>from_load_balancing_example_in</name>
+                    <state>DISABLED</state>
+                    <type>INPUT_PORT</type>
+                </inputPorts>
+                <labels>
+                    <id>045959b6-0613-355a-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>525.0000054571838</x>
+                        <y>120.99999802788261</y>
+                    </position>
+                    <height>50.23289489746094</height>
+                    <label>Generates many random flow file.
+Notice how all of the files are on the same node</label>
+                    <style>
+                        <entry>
+                            <key>font-size</key>
+                            <value>14px</value>
+                        </entry>
+                    </style>
+                    <width>328.3755187988281</width>
+                </labels>
+                <labels>
+                    <id>29889d84-b0ad-3c73-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>1116.1992242071838</x>
+                        <y>122.9752635308123</y>
+                    </position>
+                    <height>50.23289489746094</height>
+                    <label>Replace with url to a node on the cluster.</label>
+                    <style>
+                        <entry>
+                            <key>font-size</key>
+                            <value>14px</value>
+                        </entry>
+                    </style>
+                    <width>328.3755187988281</width>
+                </labels>
+                <labels>
+                    <id>788965e8-3691-3460-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>822.1105401251525</x>
+                        <y>532.187589580617</y>
+                    </position>
+                    <height>37.673946380615234</height>
+                    <label>Files in this queue are on multiple nodes</label>
+                    <style>
+                        <entry>
+                            <key>font-size</key>
+                            <value>14px</value>
+                        </entry>
+                    </style>
+                    <width>270.8136901855469</width>
+                </labels>
+                <processors>
+                    <id>99ff0773-94b6-3ada-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>1123.5400445196838</x>
+                        <y>435.97231858452324</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-update-attribute-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.1</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Delete Attributes Expression</key>
+<value>
+    <name>Delete Attributes Expression</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Store State</key>
+<value>
+    <name>Store State</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Stateful Variables Initial Value</key>
+<value>
+    <name>Stateful Variables Initial Value</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Delete Attributes Expression</key>
+                            </entry>
+                            <entry>
+<key>Store State</key>
+<value>Do not store state</value>
+                            </entry>
+                            <entry>
+<key>Stateful Variables Initial Value</key>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>UpdateAttribute</name>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>DISABLED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.attributes.UpdateAttribute</type>
+                </processors>
+                <processors>
+                    <id>f0595092-4592-37e0-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>500.0000054571839</x>
+                        <y>194.99999802788255</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.1</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>File Size</key>
+<value>
+    <name>File Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Batch Size</key>
+<value>
+    <name>Batch Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Data Format</key>
+<value>
+    <name>Data Format</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Unique FlowFiles</key>
+<value>
+    <name>Unique FlowFiles</name>
+</value>
+                            </entry>
+                            <entry>
+<key>generate-ff-custom-text</key>
+<value>
+    <name>generate-ff-custom-text</name>
+</value>
+                            </entry>
+                            <entry>
+<key>character-set</key>
+<value>
+    <name>character-set</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>File Size</key>
+<value>1B</value>
+                            </entry>
+                            <entry>
+<key>Batch Size</key>
+<value>1</value>
+                            </entry>
+                            <entry>
+<key>Data Format</key>
+<value>Text</value>
+                            </entry>
+                            <entry>
+<key>Unique FlowFiles</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>generate-ff-custom-text</key>
+                            </entry>
+                            <entry>
+<key>character-set</key>
+<value>UTF-8</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>5 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>GenerateFlowFile</name>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>DISABLED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.GenerateFlowFile</type>
+                </processors>
+                <remoteProcessGroups>
+                    <id>f63cabce-c548-30f2-0000-000000000000</id>
+                    <parentGroupId>3612e15d-d47a-3ed8-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>1109.8602349493713</x>
+                        <y>185.18630784233574</y>
+                    </position>
+                    <comments></comments>
+                    <communicationsTimeout>30 sec</communicationsTimeout>
+                    <contents>
+                        <inputPorts>
+                            <batchSettings/>
+                            <comments></comments>
+                            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                            <connected>false</connected>
+                            <exists>true</exists>
+                            <groupId>54383583-0166-1000-3fef-29d1fd675283</groupId>
+                            <id>b2da840d-cf89-3976-94fe-e5cbad54b9cb</id>
+                            <name>Test Group in</name>
+                            <targetId>0165103f-d1f2-1af6-b913-e139a86fb118</targetId>
+                            <targetRunning>true</targetRunning>
+                            <transmitting>false</transmitting>
+                            <useCompression>false</useCompression>
+                        </inputPorts>
+                        <inputPorts>
+                            <batchSettings/>
+                            <comments></comments>
+                            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                            <connected>false</connected>
+                            <exists>true</exists>
+                            <groupId>54383583-0166-1000-3fef-29d1fd675283</groupId>
+                            <id>ec4fb98f-3fcd-3877-8068-ef38652df325</id>
+                            <name>test_input</name>
+                            <targetId>0165108a-d1f2-1af6-3d08-c9d17552ce34</targetId>
+                            <targetRunning>false</targetRunning>
+                            <transmitting>false</transmitting>
+                            <useCompression>false</useCompression>
+                        </inputPorts>
+                        <inputPorts>
+                            <batchSettings/>
+                            <comments></comments>
+                            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                            <connected>true</connected>
+                            <exists>true</exists>
+                            <groupId>54383583-0166-1000-3fef-29d1fd675283</groupId>
+                            <id>25309ec7-5ef5-3448-9d84-09339494244f</id>
+                            <name>load_balancing_example_in</name>
+                            <targetId>54367b71-0166-1000-65e2-a0bb362e27da</targetId>
+                            <targetRunning>false</targetRunning>
+                            <transmitting>true</transmitting>
+                            <useCompression>false</useCompression>
+                        </inputPorts>
+                    </contents>
+                    <proxyHost></proxyHost>
+                    <proxyUser></proxyUser>
+                    <targetUri>http://localhost:8080/nifi/</targetUri>
+                    <targetUris>http://localhost:8080/nifi/</targetUris>
+                    <transportProtocol>HTTP</transportProtocol>
+                    <yieldDuration>10 sec</yieldDuration>
+                </remoteProcessGroups>
+            </contents>
+            <name>Load Balancing Example</name>
+            <variables/>
+        </processGroups>
+    </snippet>
+    <timestamp>10/08/2018 13:27:46 CDT</timestamp>
+</template>

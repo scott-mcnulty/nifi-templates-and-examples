@@ -1,0 +1,63 @@
+{
+    "_id": "5c0557cf990a30de6321129f",
+    "index": 0,
+    "guid": "614fe7cc-1914-4637-a1c6-d340b83d3d8c",
+    "isActive": true,
+    "balance": "$3,396.73",
+    "picture": "http://placehold.it/32x32",
+    "age": 33,
+    "eyeColor": "blue",
+    "name": "Acevedo Mays",
+    "gender": "male",
+    "company": "QUONATA",
+    "email": "acevedomays@quonata.com",
+    "phone": "+1 (982) 564-3757",
+    "address": "103 Bedell Lane, Manchester, Massachusetts, 7561",
+    "about": "Nulla qui in est occaecat ea nisi Lorem ut veniam nostrud. In cupidatat proident tempor nostrud elit cillum sit laborum quis commodo labore laborum. Voluptate id enim aute proident qui occaecat magna non labore do consectetur id. Consequat proident veniam et id esse eiusmod ad. Commodo consequat consequat consequat excepteur reprehenderit reprehenderit reprehenderit elit incididunt. Fugiat consequat veniam Lorem ex consequat nostrud esse laborum exercitation velit aute et.\r\n",
+    "registered": "2015-04-28T03:03:53 +05:00",
+    "latitude": -24.459312,
+    "longitude": -140.841725,
+    "tags": ["sit", "esse", "magna", "aute", "in", "dolore", "mollit"],
+    "friends": [{
+        "id": 0,
+        "name": "Everett Glass",
+        "friends_of_friend": [{
+            "id": 0,
+            "name": "Lou Hatfield"
+        }, {
+            "id": 1,
+            "name": "Lakeisha Henson"
+        }, {
+            "id": 2,
+            "name": "Willie Gibbs"
+        }]
+    }, {
+        "id": 1,
+        "name": "Brenda Willis",
+        "friends_of_friend": [{
+            "id": 0,
+            "name": "Esmeralda Puckett"
+        }, {
+            "id": 1,
+            "name": "Bertha Lindsey"
+        }, {
+            "id": 2,
+            "name": "Irwin Barron"
+        }]
+    }, {
+        "id": 2,
+        "name": "Kellie Bowen",
+        "friends_of_friend": [{
+            "id": 0,
+            "name": "Kristen Parsons"
+        }, {
+            "id": 1,
+            "name": "Dora Coleman"
+        }, {
+            "id": 2,
+            "name": "Shepherd Mitchell"
+        }]
+    }],
+    "greeting": "Hello, Acevedo Mays! You have 9 unread messages.",
+    "favoriteFruit": "banana"
+}
