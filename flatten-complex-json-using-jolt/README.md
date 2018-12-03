@@ -2,7 +2,7 @@
 
 Here is an example of how I used [JOLT](https://jolt-demo.appspot.com/#inception) to flatten a complicated JSON object that I got back when querying an api.
 
-Example generated json was made using the [json-generator.com](https://www.json-generator.com/) site. I used the configuration [here](json-generator.json).
+Example generated json was made using the [json-generator.com](https://www.json-generator.com/) site. I used the configuration [here](json-generator.spec).
 
 JOLT spec I used can be seen in the [example-jolt-spec.json](./example-jolt-spec.json) file.
 
